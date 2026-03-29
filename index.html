@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TFA Washington 2031: Frontier Leadership: What's True Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #76CEE1;
+  --navy: #00225A;
+  --red: #EF322D;
+  --maroon: #4B0000;
+  --cream: #FFEED4;
+  --black: #110E05;
+  --charcoal: #424039;
+  --stone: #8B8A86;
+  --white: #FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--black);background:var(--white);overflow-x:hidden;}
+
+/* ===== UTILITY ===== */
+.container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.container-narrow{max-width:780px;margin:0 auto;padding:0 2rem;}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;margin-bottom:1rem;}
+.label-red{color:var(--red);}
+.label-blue{color:var(--blue);}
+.label-cream{color:var(--cream);}
+
+h2.section-title{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(2rem,5vw,3.4rem);
+  text-transform:uppercase;
+  line-height:.9;
+  margin-bottom:1.5rem;
+}
+h2.section-title .hi{color:var(--blue);}
+h2.section-title .hi-red{color:var(--red);}
+
+.section-intro{
+  font-size:1.1rem;
+  line-height:1.7;
+  max-width:680px;
+  margin-bottom:3rem;
+}
+
+/* ===== NAV DOTS ===== */
+.dots{position:fixed;right:1.2rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:200;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(0,34,90,.2);border:none;cursor:pointer;transition:.3s;padding:0;}
+.dot.active{background:var(--blue);transform:scale(1.5);}
+@media(max-width:768px){.dots{display:none;}}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  background:var(--navy);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:5rem 2rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;top:-25%;right:-15%;width:800px;height:800px;background:radial-gradient(circle,rgba(118,206,225,.12) 0%,transparent 70%);border-radius:50%;}
+.hero::after{content:'';position:absolute;bottom:-25%;left:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(239,50,45,.06) 0%,transparent 70%);border-radius:50%;}
+.hero *{position:relative;z-index:1;}
+.hero-pre{font-size:.8rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--blue);margin-bottom:2.5rem;}
+.hero h1{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(3rem,8vw,6rem);line-height:.82;
+  color:var(--white);text-transform:uppercase;letter-spacing:-2px;max-width:950px;margin-bottom:1.8rem;
+}
+.hero h1 .hi{color:var(--blue);}
+.hero-sub{font-size:clamp(1rem,2vw,1.3rem);font-weight:300;color:rgba(255,255,255,.7);max-width:700px;line-height:1.65;margin-bottom:1rem;}
+.hero-sub2{font-size:clamp(.88rem,1.6vw,1.05rem);font-weight:400;color:rgba(255,255,255,.45);max-width:600px;line-height:1.6;}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--blue);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:.6rem;}
+.hero-scroll::after{content:'';width:1px;height:36px;background:var(--blue);animation:pls 2s infinite;}
+@keyframes pls{0%,100%{opacity:.3;transform:scaleY(.5);}50%{opacity:1;transform:scaleY(1);}}
+
+/* ===== SECTION: WHAT WAS TRUE ===== */
+.s-challenge{background:var(--cream);padding:6rem 0;}
+
+.challenge-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-bottom:3rem;
+}
+@media(max-width:768px){.challenge-cards{grid-template-columns:1fr;}}
+
+.ch-card{
+  background:var(--white);border-radius:14px;padding:2.2rem 1.8rem;
+  box-shadow:0 2px 24px rgba(0,34,90,.06);
+  position:relative;overflow:hidden;
+}
+.ch-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+}
+.ch-card:nth-child(1)::before{background:var(--red);}
+.ch-card:nth-child(2)::before{background:var(--blue);}
+.ch-card:nth-child(3)::before{background:var(--navy);}
+
+.ch-num{font-family:Impact,'Arial Black',sans-serif;font-size:3.5rem;color:var(--navy);opacity:.12;position:absolute;top:.5rem;right:1rem;line-height:1;}
+.ch-title{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:1px;}
+.ch-stat{font-family:Impact,'Arial Black',sans-serif;font-size:2.8rem;color:var(--red);line-height:1;margin-bottom:.4rem;}
+.ch-stat-label{font-size:.82rem;color:var(--charcoal);margin-bottom:1rem;line-height:1.4;}
+.ch-then{font-size:.82rem;color:var(--stone);line-height:1.5;border-top:1px solid #eee;padding-top:.75rem;}
+.ch-then strong{color:var(--navy);}
+
+/* ===== BAR CHART ===== */
+.bar-chart-section{margin-top:2rem;}
+.bar-chart-title{font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:1.5rem;text-align:center;}
+
+.bar-chart{
+  display:flex;align-items:flex-end;justify-content:center;gap:1.5rem;
+  height:260px;padding:0 1rem;
+}
+.bar-group{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
+.bar-pair{display:flex;align-items:flex-end;gap:4px;height:200px;}
+.bar{width:32px;border-radius:4px 4px 0 0;position:relative;transition:.3s;}
+.bar-val{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:.65rem;font-weight:700;white-space:nowrap;}
+.bar-then{background:rgba(0,34,90,.15);}
+.bar-now{background:var(--blue);}
+.bar-label{font-size:.7rem;color:var(--charcoal);text-align:center;max-width:80px;line-height:1.2;}
+
+.bar-legend{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem;}
+.legend-item{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--charcoal);}
+.legend-swatch{width:12px;height:12px;border-radius:2px;}
+
+/* ===== SECTION: WHY IT PERSISTED ===== */
+.s-persist{background:var(--white);padding:6rem 0;border-top:1px solid #eee;}
+.persist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:768px){.persist-grid{grid-template-columns:1fr;}}
+
+.persist-card{padding:2rem 1.5rem;border-left:3px solid var(--blue);background:var(--cream);border-radius:0 10px 10px 0;}
+.persist-card:nth-child(2){border-left-color:var(--red);}
+.persist-card:nth-child(3){border-left-color:var(--navy);}
+.persist-num{font-family:Impact,'Arial Black',sans-serif;font-size:1.8rem;color:var(--navy);opacity:.2;margin-bottom:.3rem;}
+.persist-title{font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.6rem;}
+.persist-was{font-size:.88rem;color:var(--charcoal);line-height:1.55;margin-bottom:.75rem;}
+.persist-now{font-size:.85rem;color:var(--navy);line-height:1.5;font-weight:500;padding-top:.75rem;border-top:1px dashed rgba(0,34,90,.15);}
+
+/* ===== HYPOTHESIS ===== */
+.s-hypothesis{background:var(--navy);padding:6rem 0;color:var(--white);}
+.hyp-quote{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(1.2rem,2.8vw,1.7rem);
+  line-height:1.5;color:rgba(255,255,255,.85);
+  max-width:800px;margin-bottom:3rem;
+  font-style:italic;
+}
+.hyp-quote strong{color:var(--blue);font-style:normal;}
+
+/* CONCENTRIC CIRCLES */
+.circles-wrap{display:flex;justify-content:center;margin-bottom:3rem;}
+.circles{position:relative;width:420px;height:420px;}
+@media(max-width:500px){.circles{width:300px;height:300px;}}
+
+.circle-ring{
+  position:absolute;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+}
+.c-system{
+  width:100%;height:100%;
+  background:rgba(118,206,225,.08);border:1px solid rgba(118,206,225,.15);
+}
+.c-eco{
+  width:72%;height:72%;top:14%;left:14%;
+  background:rgba(118,206,225,.12);border:1px solid rgba(118,206,225,.2);
+}
+.c-schools{
+  width:50%;height:50%;top:25%;left:25%;
+  background:rgba(118,206,225,.18);border:1px solid rgba(118,206,225,.3);
+}
+.c-leaders{
+  width:28%;height:28%;top:36%;left:36%;
+  background:var(--blue);
+}
+.circle-label{
+  font-family:Impact,'Arial Black',sans-serif;
+  text-transform:uppercase;letter-spacing:1px;line-height:1.1;
+}
+.c-system .circle-label{font-size:.7rem;color:rgba(255,255,255,.35);position:absolute;top:8%;left:50%;transform:translateX(-50%);}
+.c-eco .circle-label{font-size:.7rem;color:rgba(255,255,255,.45);position:absolute;top:6%;left:50%;transform:translateX(-50%);}
+.c-schools .circle-label{font-size:.72rem;color:rgba(255,255,255,.6);position:absolute;top:8%;left:50%;transform:translateX(-50%);}
+.c-leaders .circle-label{font-size:.68rem;color:var(--navy);font-weight:900;}
+
+.circles-caption{text-align:center;font-size:.82rem;color:rgba(255,255,255,.45);font-style:italic;max-width:500px;margin:0 auto;}
+
+/* ===== PROVEN BLOCK ===== */
+.hyp-proven{
+  margin-top:3rem;
+  background:rgba(118,206,225,.08);border:1px solid rgba(118,206,225,.15);
+  border-radius:12px;padding:2.5rem;max-width:800px;
+}
+.hyp-proven-title{font-family:Impact,'Arial Black',sans-serif;font-size:1.3rem;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;}
+.hyp-proven p{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:.75rem;}
+.hyp-proven p:last-child{margin-bottom:0;}
+
+/* ===== THREE PILLARS ===== */
+.s-pillars{background:var(--cream);padding:6rem 0;}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem;}
+@media(max-width:768px){.pillar-grid{grid-template-columns:1fr;}}
+
+.pillar{
+  background:var(--white);border-radius:14px;padding:2.5rem 2rem;
+  box-shadow:0 2px 24px rgba(0,34,90,.06);
+  position:relative;overflow:hidden;
+}
+.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;}
+.pillar:nth-child(1)::before{background:var(--red);}
+.pillar:nth-child(2)::before{background:var(--blue);}
+.pillar:nth-child(3)::before{background:var(--navy);}
+
+.pillar-icon{font-size:2.2rem;margin-bottom:1rem;}
+.pillar-name{font-family:Impact,'Arial Black',sans-serif;font-size:1.4rem;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;}
+.pillar-sub{font-size:.78rem;color:var(--stone);text-transform:uppercase;letter-spacing:2px;margin-bottom:1.2rem;}
+.pillar-desc{font-size:.92rem;color:var(--charcoal);line-height:1.6;margin-bottom:1.5rem;}
+
+.pillar-stats{border-top:1px solid #eee;padding-top:1.2rem;}
+.pillar-stat-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;}
+.pillar-stat-label{font-size:.78rem;color:var(--charcoal);}
+.pillar-stat-val{font-family:Impact,'Arial Black',sans-serif;font-size:1.4rem;color:var(--navy);}
+
+/* ===== AMR FRAMEWORK ===== */
+.amr-section{margin-top:1rem;}
+.amr-title{text-align:center;font-family:Impact,'Arial Black',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--navy);text-transform:uppercase;margin-bottom:.5rem;}
+.amr-subtitle{text-align:center;font-size:.88rem;color:var(--charcoal);margin-bottom:2.5rem;line-height:1.5;max-width:600px;margin-left:auto;margin-right:auto;}
+
+.amr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+@media(max-width:768px){.amr-cards{grid-template-columns:1fr;}}
+
+.amr-card{
+  text-align:center;padding:2rem 1.5rem;border-radius:12px;
+  position:relative;
+}
+.amr-card:nth-child(1){background:var(--red);color:var(--white);}
+.amr-card:nth-child(2){background:var(--blue);color:var(--navy);}
+.amr-card:nth-child(3){background:var(--navy);color:var(--white);}
+
+.amr-letter{font-family:Impact,'Arial Black',sans-serif;font-size:3rem;line-height:1;margin-bottom:.3rem;opacity:.25;}
+.amr-name{font-family:Impact,'Arial Black',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:.6rem;}
+.amr-desc{font-size:.82rem;line-height:1.5;opacity:.85;}
+.amr-proven-tag{
+  display:inline-block;margin-top:1rem;
+  font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:.35rem .8rem;border-radius:20px;
+  background:rgba(255,255,255,.2);
+}
+
+/* ===== FRONTIER LEADERS GRID ===== */
+.s-leaders{background:var(--white);padding:6rem 0;border-top:1px solid #eee;}
+.leaders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;}
+@media(max-width:600px){.leaders-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;}}
+.leader-card{text-align:center;}
+.leader-photo{
+  width:130px;height:130px;border-radius:50%;margin:0 auto .8rem;
+  object-fit:cover;
+  border:3px solid var(--cream);
+  box-shadow:0 2px 12px rgba(0,34,90,.1);
+  filter:saturate(1.1) brightness(1.05) contrast(1.05);
+  transition:.3s;
+}
+.leader-photo:hover{filter:saturate(1.2) brightness(1.1) contrast(1.05);transform:scale(1.05);}
+.leader-name{font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:.15rem;}
+.leader-role{font-size:.7rem;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:.2rem;}
+.leader-detail{font-size:.72rem;color:var(--stone);line-height:1.3;}
+
+/* ===== SPOTLIGHT: AI INNOVATION ===== */
+.s-spotlight{background:var(--maroon);padding:6rem 0;color:var(--white);position:relative;overflow:hidden;}
+.s-spotlight::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(ellipse at 80% 50%,rgba(118,206,225,.08) 0%,transparent 70%);}
+
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1;}
+@media(max-width:768px){.spot-grid{grid-template-columns:1fr;}}
+
+.spot-content{}
+.spot-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
+.spot-eyebrow::before{content:'';width:20px;height:2px;background:var(--blue);}
+.spot-headline{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);text-transform:uppercase;color:var(--white);line-height:.92;margin-bottom:1.2rem;}
+.spot-headline .hi{color:var(--blue);}
+.spot-body{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:1.5rem;}
+.spot-body p{margin-bottom:1rem;}
+.spot-body p:last-child{margin-bottom:0;}
+
+.spot-callout{
+  background:rgba(118,206,225,.1);border:1px solid rgba(118,206,225,.2);
+  border-radius:10px;padding:1.5rem;margin-top:1.5rem;
+}
+.spot-callout-title{font-weight:700;font-size:.82rem;color:var(--blue);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:2px;}
+.spot-callout p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.55;}
+
+.spot-stats{display:flex;flex-direction:column;gap:1.5rem;}
+.spot-stat-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(118,206,225,.12);
+  border-radius:12px;padding:1.8rem;text-align:center;
+}
+.spot-stat-num{font-family:Impact,'Arial Black',sans-serif;font-size:2.8rem;color:var(--blue);line-height:1;margin-bottom:.3rem;}
+.spot-stat-label{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.35;}
+.spot-stat-sub{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.3rem;font-style:italic;}
+
+.spot-quote{
+  margin-top:2rem;
+  border-left:3px solid var(--blue);
+  padding:.75rem 0 .75rem 1.2rem;
+  font-family:Georgia,serif;
+  font-size:1rem;
+  font-style:italic;
+  color:rgba(255,255,255,.75);
+  line-height:1.5;
+}
+.spot-quote cite{display:block;font-style:normal;font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.5rem;font-family:'Poppins',sans-serif;}
+
+/* ===== OUTCOMES DASHBOARD ===== */
+.s-outcomes{background:var(--navy);padding:6rem 0;color:var(--white);}
+
+.outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+
+.o-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(118,206,225,.12);
+  border-radius:12px;padding:2rem;position:relative;overflow:hidden;
+}
+.o-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--blue),transparent);}
+.o-card-title{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:1.2rem;}
+
+.o-row{display:flex;align-items:center;margin-bottom:.5rem;}
+.o-yr{font-size:.7rem;color:rgba(255,255,255,.4);width:36px;flex-shrink:0;}
+.o-track{flex:1;height:22px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden;}
+.o-fill{height:100%;border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;font-size:.65rem;font-weight:700;}
+.o-fill.blue{background:var(--blue);color:var(--navy);}
+.o-fill.red{background:var(--red);color:var(--white);}
+.o-fill.cream{background:var(--cream);color:var(--navy);}
+.o-note{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1rem;line-height:1.4;font-style:italic;}
+
+/* ===== NEWS MOCK ===== */
+.s-news{background:var(--white);padding:6rem 0;border-top:1px solid #eee;}
+.news-mast{text-align:center;padding-bottom:1.5rem;border-bottom:3px double var(--charcoal);margin-bottom:2rem;}
+.news-mast-name{font-family:Georgia,serif;font-size:2.2rem;font-weight:700;color:var(--black);letter-spacing:2px;}
+.news-mast-date{font-family:Georgia,serif;font-size:.78rem;color:var(--stone);margin-top:.3rem;}
+.news-tag{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;}
+.news-hl{font-family:Georgia,serif;font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:700;color:var(--black);line-height:1.18;margin-bottom:.7rem;}
+.news-deck{font-family:Georgia,serif;font-size:1.05rem;color:var(--charcoal);line-height:1.5;font-style:italic;margin-bottom:1.5rem;}
+.news-byline{font-size:.78rem;color:var(--stone);margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid #e0e0e0;}
+.news-body{font-family:Georgia,serif;font-size:1rem;color:var(--charcoal);line-height:1.75;}
+.news-body p{margin-bottom:1.2rem;}
+
+.news-pq{
+  border-left:4px solid var(--blue);
+  margin:2rem 0;padding:1.2rem 0 1.2rem 1.5rem;
+  font-family:Georgia,serif;font-size:1.2rem;font-style:italic;color:var(--navy);line-height:1.45;
+}
+.news-pq cite{display:block;font-style:normal;font-size:.78rem;color:var(--stone);margin-top:.6rem;font-family:'Poppins',sans-serif;}
+
+/* ===== VOICES ===== */
+.s-voices{background:var(--cream);padding:6rem 0;}
+.voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+
+.v-card{
+  background:var(--white);border-radius:12px;padding:2.5rem 2rem;
+  box-shadow:0 2px 20px rgba(0,34,90,.06);position:relative;
+}
+.v-card::before{content:'\201C';font-family:Georgia,serif;font-size:5rem;color:var(--blue);opacity:.2;position:absolute;top:.3rem;left:1rem;line-height:1;}
+.v-quote{font-family:Georgia,serif;font-size:1rem;color:var(--charcoal);line-height:1.6;margin-bottom:1.5rem;position:relative;z-index:1;}
+.v-attr{display:flex;align-items:center;gap:1rem;}
+.v-ava{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:var(--white);flex-shrink:0;object-fit:cover;border:2px solid var(--cream);}
+.v-name{font-weight:600;font-size:.88rem;color:var(--navy);}
+.v-role{font-size:.75rem;color:var(--stone);margin-top:.1rem;}
+
+/* ===== PARENT LETTER ===== */
+.s-letter{background:var(--white);padding:6rem 0;border-top:1px solid #eee;}
+.letter-card{
+  max-width:680px;margin:0 auto;background:var(--cream);border-radius:14px;
+  padding:3rem;position:relative;box-shadow:0 4px 30px rgba(0,34,90,.06);
+}
+.letter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--red));border-radius:14px 14px 0 0;}
+.letter-from{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;}
+.letter-body{font-family:Georgia,serif;font-size:1rem;color:var(--charcoal);line-height:1.75;}
+.letter-body p{margin-bottom:1.2rem;}
+.letter-sig{font-family:Georgia,serif;font-style:italic;color:var(--navy);margin-top:1.5rem;font-size:1rem;}
+
+/* ===== OSPI PRESS ===== */
+.s-press{background:var(--cream);padding:6rem 0;}
+.press-card{max-width:750px;margin:0 auto;background:var(--white);border-radius:14px;padding:3rem;box-shadow:0 4px 30px rgba(0,34,90,.06);}
+.press-org{font-size:.68rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--stone);margin-bottom:.5rem;text-align:center;}
+.press-title{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);color:var(--navy);text-transform:uppercase;line-height:1.05;margin-bottom:.5rem;text-align:center;}
+.press-sub{font-size:.95rem;color:var(--charcoal);font-style:italic;text-align:center;margin-bottom:1.5rem;}
+.press-meta{font-size:.78rem;color:var(--stone);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #eee;text-align:center;}
+.press-body{font-size:.92rem;color:var(--charcoal);line-height:1.7;}
+.press-body p{margin-bottom:1rem;}
+.press-body strong{color:var(--navy);}
+
+/* ===== TIMELINE ===== */
+.s-timeline{background:var(--white);padding:6rem 0;border-top:1px solid #eee;}
+.tl{position:relative;padding-left:3rem;}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),var(--red));}
+.tl-i{position:relative;margin-bottom:2.5rem;}
+.tl-i:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-3rem;top:.3rem;width:14px;height:14px;border-radius:50%;border:3px solid var(--blue);background:var(--white);}
+.tl-i:last-child .tl-dot{background:var(--red);border-color:var(--red);}
+.tl-yr{font-family:Impact,'Arial Black',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:.2rem;}
+.tl-title{font-weight:600;font-size:1rem;color:var(--navy);margin-bottom:.3rem;}
+.tl-desc{font-size:.88rem;color:var(--charcoal);line-height:1.5;}
+
+/* ===== PROOF WALL ===== */
+.s-proof{background:var(--cream);padding:5rem 0;}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+@media(max-width:768px){.proof-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.proof-grid{grid-template-columns:1fr;}}
+.proof-stat{border-left:3px solid var(--blue);padding-left:1.2rem;}
+.proof-stat-num{font-family:Impact,'Arial Black',sans-serif;font-size:3rem;color:var(--navy);line-height:1;}
+.proof-stat-label{font-size:.88rem;font-weight:500;color:var(--charcoal);line-height:1.35;margin-top:.2rem;}
+.proof-stat-ctx{font-size:.72rem;color:var(--stone);margin-top:.2rem;font-style:italic;}
+
+/* ===== CLOSING ===== */
+.s-closing{background:var(--navy);padding:8rem 2rem;text-align:center;}
+.closing-inner{max-width:800px;margin:0 auto;}
+.closing-inner h2{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(2.2rem,6vw,4.2rem);text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:2rem;}
+.closing-inner h2 .hi{color:var(--blue);}
+.closing-inner p{font-size:1.1rem;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:1.2rem;}
+.closing-final{font-size:1.3rem;color:var(--white);font-weight:600;margin-top:2rem;}
+.closing-footer{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(118,206,225,.15);font-size:.7rem;color:rgba(255,255,255,.25);letter-spacing:3px;text-transform:uppercase;}
+
+/* ===== IMAGE PLACEHOLDERS ===== */
+.img-hero-strip{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:0;
+  margin-top:3rem;max-width:900px;width:100%;
+}
+.img-slot{
+  height:120px;background-color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:1px;text-transform:uppercase;
+  border-right:1px solid rgba(255,255,255,.05);
+}
+.img-slot:last-child{border-right:none;}
+
+/* WA State outline + TFA logo watermarks */
+.wa-outline{position:fixed;top:50%;right:-5%;transform:translateY(-50%);width:50vw;max-width:600px;opacity:.03;z-index:0;pointer-events:none;}
+.tfa-watermark{position:fixed;bottom:3rem;left:3rem;width:120px;opacity:.06;z-index:0;pointer-events:none;}
+
+.img-full{
+  width:100%;height:280px;background:linear-gradient(135deg,rgba(118,206,225,.08),rgba(0,34,90,.12));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;color:var(--stone);letter-spacing:2px;text-transform:uppercase;
+  border-radius:12px;margin:2rem 0;
+}
+</style>
+</head>
+<body>
+
+<!-- WA State Outline Watermark -->
+<svg class="wa-outline" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30 50 L50 30 L90 25 L120 35 L150 20 L180 30 L200 15 L230 25 L260 20 L290 30 L310 25 L340 35 L360 25 L380 30 L400 20 L430 35 L460 30 L480 40 L475 70 L470 100 L465 130 L460 150 L470 170 L475 190 L465 210 L455 230 L440 250 L420 260 L400 270 L380 265 L350 270 L320 275 L290 270 L260 280 L230 275 L200 280 L170 275 L140 280 L110 275 L80 280 L50 270 L35 250 L25 220 L20 190 L25 160 L20 130 L25 100 L20 80 L30 50Z" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+
+<!-- TFA Logo Watermark -->
+<svg class="tfa-watermark" viewBox="0 0 200 50" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color:var(--navy);">
+<text x="0" y="35" font-family="Impact,'Arial Black',sans-serif" font-size="28" letter-spacing="3" fill="currentColor" opacity="1">TEACH FOR AMERICA</text>
+</svg>
+
+<!-- NAV DOTS -->
+<nav class="dots" aria-label="Sections">
+  <button class="dot active" onclick="go(0)" title="Home"></button>
+  <button class="dot" onclick="go(1)" title="The Challenge"></button>
+  <button class="dot" onclick="go(2)" title="Why It Persisted"></button>
+  <button class="dot" onclick="go(3)" title="Our Hypothesis"></button>
+  <button class="dot" onclick="go(4)" title="Proof Wall"></button>
+  <button class="dot" onclick="go(5)" title="Talent Engine"></button>
+  <button class="dot" onclick="go(6)" title="The AMR Framework"></button>
+  <button class="dot" onclick="go(7)" title="Outcomes"></button>
+  <button class="dot" onclick="go(8)" title="In the News"></button>
+  <button class="dot" onclick="go(9)" title="Voices"></button>
+  <button class="dot" onclick="go(10)" title="Timeline"></button>
+  <button class="dot" onclick="go(11)" title="From a Parent"></button>
+  <button class="dot" onclick="go(12)" title="OSPI"></button>
+  <button class="dot" onclick="go(13)" title="What Now"></button>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" data-s="0">
+  <div class="hero-pre">Teach For America Washington 2031</div>
+  <h1>We said we'd <span class="hi">build the proof</span><br><span class="hi">together.</span> We did.</h1>
+  <p class="hero-sub">
+    Five years ago, we set course. Washington had every condition for change except one: visible proof that peers trust. This is what happened when we built it together.
+  </p>
+  <p class="hero-sub2">
+    10 schools. 91,000 students. Educators, families, and communities — arm in arm — built something Washington had never seen. TFA fueled the talent. The community made it real.
+  </p>
+
+  <!-- Corps member photo strip -->
+  <div class="img-hero-strip" style="border-radius:8px;overflow:hidden;">
+    <div class="img-slot" style="background:url('photos/nik-nair.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/kristina-thach.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/claire-wu.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/rocio-araujo.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/joe-hille.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/zoey-alexander.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/juan-ochoa.png') center/cover;"></div>
+    <div class="img-slot" style="background:url('photos/linda-barragan.png') center/cover;"></div>
+  </div>
+
+  <a href="#challenge" class="hero-scroll">Scroll</a>
+</section>
+
+<!-- ============================================================
+     THE CHALLENGE (WAS)
+     ============================================================ -->
+<section class="s-challenge" id="challenge" data-s="1">
+  <div class="container">
+    <div class="section-label label-red">The Challenge: What Was True in 2026</div>
+    <h2 class="section-title" style="color:var(--navy);">Washington wasn't <span class="hi-red">failing on average.</span><br>It was failing <span class="hi">specifically.</span></h2>
+    <p class="section-intro" style="color:var(--charcoal);">
+      In 2026, Washington produced more software engineers and AI researchers per capita than almost any state. Thirty minutes from Microsoft's headquarters, hundreds of thousands of students were not on track to participate in any of it. Three numbers told the story.
+    </p>
+
+    <div class="challenge-cards">
+      <!-- Card 1: Academic Readiness -->
+      <div class="ch-card">
+        <div class="ch-num">01</div>
+        <div class="ch-title">Academic Readiness</div>
+        <div class="ch-stat">13%</div>
+        <div class="ch-stat-label">of students in high-poverty schools were proficient in 8th grade math. For Black and Latino students: 12%.</div>
+        <div class="ch-then"><strong>By 2031:</strong> Innovative Schools have reached 31%. The gap is narrowing at 2-3 points per year. The state average for similar schools is 15%.</div>
+      </div>
+      <!-- Card 2: Aspiration Gap -->
+      <div class="ch-card">
+        <div class="ch-num">02</div>
+        <div class="ch-title">The Aspiration Gap</div>
+        <div class="ch-stat">88% &rarr; 50%</div>
+        <div class="ch-stat-label">of students wanted college. Half enrolled. Fewer than 40% of low-income enrollees finished.</div>
+        <div class="ch-then"><strong>By 2031:</strong> Network graduates enroll at 67%, 17 points above state average. The pipeline doesn't collapse at registration anymore.</div>
+      </div>
+      <!-- Card 3: Future-Ready -->
+      <div class="ch-card">
+        <div class="ch-num">03</div>
+        <div class="ch-title">Future-Ready Preparation</div>
+        <div class="ch-stat">19%</div>
+        <div class="ch-stat-label">of students received structured AI guidance. 54% were already using AI for schoolwork. The access gap between wealthy and low-income students doubled in one year.</div>
+        <div class="ch-then"><strong>By 2031:</strong> 100% of Innovative School students receive daily structured AI instruction. The access gap within our network is closed.</div>
+      </div>
+    </div>
+
+    <!-- Before/After Bar Chart -->
+    <div class="bar-chart-section">
+      <div class="bar-chart-title">Then vs. Now: Innovative Schools Network</div>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar-pair">
+            <div class="bar bar-then" style="height:26px;"><span class="bar-val" style="color:var(--stone);">13%</span></div>
+            <div class="bar bar-now" style="height:62px;"><span class="bar-val" style="color:var(--navy);">31%</span></div>
+          </div>
+          <div class="bar-label">8th Grade Math</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-pair">
+            <div class="bar bar-then" style="height:84px;"><span class="bar-val" style="color:var(--stone);">42%</span></div>
+            <div class="bar bar-now" style="height:134px;"><span class="bar-val" style="color:var(--navy);">67%</span></div>
+          </div>
+          <div class="bar-label">College Enrollment</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-pair">
+            <div class="bar bar-then" style="height:38px;"><span class="bar-val" style="color:var(--stone);">19%</span></div>
+            <div class="bar bar-now" style="height:200px;"><span class="bar-val" style="color:var(--navy);">100%</span></div>
+          </div>
+          <div class="bar-label">Structured AI</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-pair">
+            <div class="bar bar-then" style="height:76px;"><span class="bar-val" style="color:var(--stone);">38%</span></div>
+            <div class="bar bar-now" style="height:42px;"><span class="bar-val" style="color:var(--navy);">21%</span></div>
+          </div>
+          <div class="bar-label">Chronic Absence</div>
+        </div>
+      </div>
+      <div class="bar-legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:rgba(0,34,90,.15);"></div> 2026</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--blue);"></div> 2031</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY IT PERSISTED
+     ============================================================ -->
+<section class="s-persist" data-s="2">
+  <div class="container">
+    <div class="section-label label-red">Why It Persisted</div>
+    <h2 class="section-title" style="color:var(--navy);">Three structural <span class="hi">barriers</span> explained<br>why investment alone <span class="hi-red">hadn't moved the needle</span></h2>
+    <p class="section-intro" style="color:var(--charcoal);">
+      Washington wasn't short on funding, will, or programs. It was short on a mechanism to move a system of 295 independent districts. Here's what was in the way, and what changed.
+    </p>
+
+    <div class="persist-grid">
+      <div class="persist-card">
+        <div class="persist-num">01</div>
+        <div class="persist-title">Fragmented</div>
+        <div class="persist-was">295 independent districts. When a school found something that worked, there was no default mechanism to spread it. What students experienced depended on which building they walked into.</div>
+        <div class="persist-now">Now: 14 districts have adopted the playbook. The mechanism to spread what works is proof that travels principal-to-principal.</div>
+      </div>
+      <div class="persist-card">
+        <div class="persist-num">02</div>
+        <div class="persist-title">Misaligned</div>
+        <div class="persist-was">No shortage of investment. What was missing was coherence: shared goals, consistent data use, and infrastructure to know whether investments were changing outcomes for kids.</div>
+        <div class="persist-now">Now: Innovative Schools share NWEA data 3x/year. Rankings are transparent. Schools learn from top performers because the data is open.</div>
+      </div>
+      <div class="persist-card">
+        <div class="persist-num">03</div>
+        <div class="persist-title">Outdated</div>
+        <div class="persist-was">Curriculum, credential pathways, and the definition of "ready" were built for an economy that no longer existed. AI was reshaping every sector. Students growing up near the companies building these tools deserved a pathway to use them.</div>
+        <div class="persist-now">Now: Every Innovative School has structured AI instruction. Students learn when to use the tools and when to push back.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUR HYPOTHESIS
+     ============================================================ -->
+<section class="s-hypothesis" data-s="3">
+  <div class="container">
+    <div class="section-label label-blue">Our Hypothesis: Proven</div>
+    <h2 class="section-title" style="color:var(--white);">In a decentralized system,<br><span class="hi">proof creates demand.</span></h2>
+
+    <div class="hyp-quote">
+      "In systems where change cannot be mandated, it travels through <strong>early adopters whose results persuade peers</strong>. Not through policy. Not through tools. Through people who build something real in a place others can see, and whose proof is <strong>credible enough to make adoption feel safe</strong>."
+    </div>
+
+    <!-- CONCENTRIC CIRCLES -->
+    <div class="circles-wrap">
+      <div class="circles">
+        <div class="circle-ring c-system"><span class="circle-label">System</span></div>
+        <div class="circle-ring c-eco"><span class="circle-label">Ecosystem</span></div>
+        <div class="circle-ring c-schools"><span class="circle-label">Innovative Schools</span></div>
+        <div class="circle-ring c-leaders"><span class="circle-label">Frontier<br>Leaders</span></div>
+      </div>
+    </div>
+    <p class="circles-caption">Change radiates outward from Frontier Leaders. It always has. The strategy was designed to accelerate it.</p>
+
+    <!-- PROVEN -->
+    <div class="hyp-proven">
+      <div class="hyp-proven-title">What We Said Would Signal It's Working</div>
+      <p>&#10003; &nbsp;Principals outside our network would request the playbook without being asked. <strong>14 districts did.</strong></p>
+      <p>&#10003; &nbsp;Districts would approach us about partnership, not the other way around. <strong>They did.</strong></p>
+      <p>&#10003; &nbsp;Alumni would be leading schools we never directly touched, running them differently. <strong>6 are.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROOF WALL — BIG NUMBERS
+     ============================================================ -->
+<section class="s-proof" data-s="4">
+  <div class="container">
+    <div class="section-label label-red">By the Numbers</div>
+    <h2 class="section-title" style="color:var(--navy);">The results <span class="hi">Washington</span> needed to see</h2>
+
+    <div class="proof-grid">
+      <div class="proof-stat">
+        <div class="proof-stat-num">10</div>
+        <div class="proof-stat-label">Innovative Schools</div>
+        <div class="proof-stat-ctx">Up from 0 in 2026</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">5,200</div>
+        <div class="proof-stat-label">Students in Innovative Schools</div>
+        <div class="proof-stat-ctx">Direct model, measured outcomes</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">91K</div>
+        <div class="proof-stat-label">Students reached network-wide</div>
+        <div class="proof-stat-ctx">Up from 65,000 in 2026</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">100</div>
+        <div class="proof-stat-label">Corps members</div>
+        <div class="proof-stat-ctx">4x growth in five years</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">120</div>
+        <div class="proof-stat-label">Ignite Fellows</div>
+        <div class="proof-stat-ctx">High-dosage tutoring at scale</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">50</div>
+        <div class="proof-stat-label">AI Fellows trained</div>
+        <div class="proof-stat-ctx">Structured AI in every partner school</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">37</div>
+        <div class="proof-stat-label">Alumni leading schools</div>
+        <div class="proof-stat-ctx">6 outside our direct network</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">14</div>
+        <div class="proof-stat-label">Districts adopted the playbook</div>
+        <div class="proof-stat-ctx">Without being asked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PILLAR 1: TALENT ENGINE
+     ============================================================ -->
+<section class="s-pillars" data-s="5">
+  <div class="container">
+    <div class="section-label label-red">The Three Pillars: Delivered</div>
+    <h2 class="section-title" style="color:var(--navy);">We built the <span class="hi">talent engine,</span> ran the <span class="hi">lab,</span><br>and fueled the <span class="hi-red">schools</span></h2>
+    <p class="section-intro" style="color:var(--charcoal);">Three interconnected strategies. Each one necessary. Together, they created the conditions for change.</p>
+
+    <div class="pillar-grid">
+      <!-- Talent Engine -->
+      <div class="pillar">
+        <div class="pillar-icon">&#9883;</div>
+        <div class="pillar-name">Build the Talent Engine</div>
+        <div class="pillar-sub">Frontier Leaders</div>
+        <div class="pillar-desc">Corps members in classrooms. Ignite fellows as high-dosage tutors. AI Fellows embedding structured technology instruction. Alumni moving into school and system leadership. Not every person who came through embodied the full Frontier Leader profile immediately. But by concentrating talent, we created the pool from which Frontier Leaders emerged.</div>
+        <div class="pillar-stats">
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Corps Members</span><span class="pillar-stat-val">24 &rarr; 100</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Ignite Fellows</span><span class="pillar-stat-val">40 &rarr; 120</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">AI Fellows</span><span class="pillar-stat-val">12 &rarr; 50</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Alumni School Leaders</span><span class="pillar-stat-val">25 &rarr; 37</span></div>
+        </div>
+      </div>
+      <!-- Summer Institute -->
+      <div class="pillar">
+        <div class="pillar-icon">&#9881;</div>
+        <div class="pillar-name">Run the Lab</div>
+        <div class="pillar-sub">Summer Institute</div>
+        <div class="pillar-desc">Every summer in Federal Way, we trained the mentor teachers, designed the instructional model, coached corps members in real time, set norms around AI ethics, and owned the data. Corps members practiced the Frontier Leader profile here before carrying it into the school year. What worked here informed everything else.</div>
+        <div class="pillar-stats">
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Students served (summer)</span><span class="pillar-stat-val">800+</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Mentor teachers trained</span><span class="pillar-stat-val">45</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Learning gain (math)</span><span class="pillar-stat-val">+22%</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Years running</span><span class="pillar-stat-val">6</span></div>
+        </div>
+      </div>
+      <!-- Innovative Schools -->
+      <div class="pillar">
+        <div class="pillar-icon">&#9733;</div>
+        <div class="pillar-name">Fuel Innovative Schools</div>
+        <div class="pillar-sub">10 Schools</div>
+        <div class="pillar-desc">A principal engaged in shared goal-setting and data review. A cluster of corps members and Ignite fellows placed. Schoolwide routines for self-efficacy. Grade-level instruction aligned with tutoring. At least one classroom with structured AI guidance built into daily practice. Three non-negotiables: Agency, Mastery, Readiness.</div>
+        <div class="pillar-stats">
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Innovative Schools</span><span class="pillar-stat-val">0 &rarr; 10</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Students directly served</span><span class="pillar-stat-val">5,200</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Math gains (avg/yr)</span><span class="pillar-stat-val">+2.3 pts</span></div>
+          <div class="pillar-stat-row"><span class="pillar-stat-label">Playbook adoptions</span><span class="pillar-stat-val">14 districts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 SCHOOLS ACROSS 5 DISTRICTS -->
+    <div class="amr-section" data-s="6">
+      <div class="amr-title" style="font-size:clamp(1.2rem,2.5vw,1.6rem);">10 Schools. 5 Districts. <span style="color:var(--red);">Real Growth.</span></div>
+      <div class="amr-subtitle">Across Federal Way, Auburn, Renton, Franklin Pierce, and Tacoma, Innovative Schools are showing measurable gains in student agency, academic mastery, and future readiness.</div>
+
+      <div class="amr-cards">
+        <div class="amr-card">
+          <div class="amr-letter" style="font-size:2rem;">&#9650;</div>
+          <div class="amr-name">Student Agency</div>
+          <div class="amr-desc">Chronic absenteeism down 17 points. Students show up because they believe their effort matters. Belonging structures and self-efficacy routines are part of every school day.</div>
+          <div class="amr-proven-tag">Chronic absence: 38% &rarr; 21%</div>
+        </div>
+        <div class="amr-card">
+          <div class="amr-letter" style="font-size:2rem;">&#9650;</div>
+          <div class="amr-name">Academic Growth</div>
+          <div class="amr-desc">Math proficiency in high poverty schools more than doubled across the network. Grade level instruction paired with high dosage tutoring and transparent data sharing across schools.</div>
+          <div class="amr-proven-tag">8th grade math: 13% &rarr; 31%</div>
+        </div>
+        <div class="amr-card">
+          <div class="amr-letter" style="font-size:2rem;">&#9650;</div>
+          <div class="amr-name">Future Readiness</div>
+          <div class="amr-desc">Every Innovative School has daily structured AI instruction. Students learn to use the tools and to think critically about when not to. College enrollment up 25 points above comparable schools.</div>
+          <div class="amr-proven-tag">100% structured AI instruction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FRONTIER LEADERS — THE PEOPLE
+     ============================================================ -->
+<section class="s-leaders" data-s="6a">
+  <div class="container">
+    <div class="section-label label-red">Washington Corps 2024 &amp; 2025: Where They Are Now</div>
+    <h2 class="section-title" style="color:var(--navy);">They came as <span class="hi">corps members.</span><br>Five years later, they're <span class="hi-red">leading the change.</span></h2>
+    <p class="section-intro" style="color:var(--charcoal);">Every leader on this page started in a TFA classroom. What they built from there is what made the strategy real.</p>
+
+    <div class="leaders-grid">
+      <div class="leader-card">
+        <img src="photos/nik-nair.png" alt="Nik Nair" class="leader-photo">
+        <div class="leader-name">Nik Nair</div>
+        <div class="leader-role">Principal</div>
+        <div class="leader-detail">Dimmitt Middle School<br>Washington Corps 2024 &bull; SeaTac, WA</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/kristina-thach.png" alt="Kristina Thach" class="leader-photo">
+        <div class="leader-name">Kristina Thach</div>
+        <div class="leader-role">Math Dept. Chair</div>
+        <div class="leader-detail">Rainier Prep<br>Washington Corps 2024 &bull; Portland, OR</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/claire-wu.png" alt="Claire Wu" class="leader-photo">
+        <div class="leader-name">Claire Wu</div>
+        <div class="leader-role">Innovation Zone Lead</div>
+        <div class="leader-detail">Federal Way Alumni Network<br>Washington Corps 2024 &bull; Sammamish, WA</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/bradee-parisotto.png" alt="Bradee Parisotto" class="leader-photo">
+        <div class="leader-name">Bradee Parisotto</div>
+        <div class="leader-role">Innovation Zone Co-Lead</div>
+        <div class="leader-detail">Federal Way Public Schools<br>Washington Corps 2024 &bull; Spokane, WA</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/joe-hille.png" alt="Joe Hille" class="leader-photo">
+        <div class="leader-name">Joe Hille</div>
+        <div class="leader-role">Early College Director</div>
+        <div class="leader-detail">Highline School District<br>Washington Corps 2025 &bull; Stow, MA</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/rocio-araujo.png" alt="Rocio Araujo" class="leader-photo">
+        <div class="leader-name">Rocio Araujo</div>
+        <div class="leader-role">Bilingual Programs Lead</div>
+        <div class="leader-detail">Family Engagement Pioneer<br>Washington Corps 2025 &bull; Yakima, WA</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/linda-barragan.png" alt="Linda Barragan" class="leader-photo">
+        <div class="leader-name">Linda Barragan</div>
+        <div class="leader-role">Science Department Head</div>
+        <div class="leader-detail">AI &amp; Biology Integration<br>Washington Corps 2024 &bull; Wapato, WA</div>
+      </div>
+      <div class="leader-card">
+        <div style="width:130px;height:130px;border-radius:50%;margin:0 auto .8rem;background:linear-gradient(135deg,var(--navy),var(--maroon));display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:700;font-size:2.2rem;font-family:Impact,'Arial Black',sans-serif;border:3px solid var(--cream);box-shadow:0 2px 12px rgba(0,34,90,.1);">A</div>
+        <div class="leader-name">Ashley</div>
+        <div class="leader-role">Elementary Principal</div>
+        <div class="leader-detail">Innovative School, Mirror Lake<br>Washington Corps 2024</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/zoey-alexander.png" alt="Zoey Alexander" class="leader-photo">
+        <div class="leader-name">Zoey Alexander</div>
+        <div class="leader-role">Community Schools Director</div>
+        <div class="leader-detail">Family &amp; student voice integration<br>Washington Corps 2025 &bull; Seaside, OR</div>
+      </div>
+      <div class="leader-card">
+        <img src="photos/juan-ochoa.png" alt="Juan Ochoa" class="leader-photo">
+        <div class="leader-name">Juan Ochoa</div>
+        <div class="leader-role">Instructional Coach</div>
+        <div class="leader-detail">Secondary history &amp; civic engagement<br>Washington Corps 2025 &bull; Riverside, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPOTLIGHT: THE INNOVATION THAT CHANGED EVERYTHING
+     ============================================================ -->
+<section class="s-spotlight" data-s="6b">
+  <div class="container">
+    <div class="spot-grid">
+
+      <div class="spot-content">
+        <div class="spot-eyebrow">Spotlight</div>
+        <div class="spot-headline">Agentic AI <span class="hi">hit the classroom.</span><br>Students didn't just keep up.<br>They <span class="hi">pulled ahead.</span></div>
+
+        <div class="spot-body">
+          <p>In 2028, AI stopped being a tool students used occasionally and became something they worked alongside daily. Innovative Schools didn't wait for a state curriculum. AI Fellows built structured instruction from day one, teaching students not just how to prompt, but how to think critically about what came back.</p>
+          <p>By 2030, something unexpected happened. Students in the network weren't just learning faster. They were learning differently. Eighth graders at Dimmitt were building their own study systems with AI tutors. High schoolers in Highline's early college program were completing college-level coursework a full year ahead of schedule. And when they arrived at UW, Seattle U, and community colleges across the state, they weren't behind. They were impatient.</p>
+          <p>Admissions counselors started hearing a new question from Innovative School graduates: <em>"Why isn't this class using the tools I already know?"</em></p>
+        </div>
+
+        <div class="spot-callout">
+          <div class="spot-callout-title">The Reversal</div>
+          <p>For the first time, high-poverty students from Washington's Innovative Schools are arriving at college more prepared for the AI economy than their wealthier peers from traditional schools. The access gap didn't just close. In our network, it flipped.</p>
+        </div>
+      </div>
+
+      <div class="spot-stats">
+        <div class="spot-stat-card">
+          <div class="spot-stat-num">100%</div>
+          <div class="spot-stat-label">of Innovative School students receive daily structured AI instruction</div>
+          <div class="spot-stat-sub">State average: 38%</div>
+        </div>
+        <div class="spot-stat-card">
+          <div class="spot-stat-num">1 yr</div>
+          <div class="spot-stat-label">ahead. Highline early college students completing coursework a full year early</div>
+          <div class="spot-stat-sub">Ash Ramirez &amp; Joe Hille's program</div>
+        </div>
+        <div class="spot-stat-card">
+          <div class="spot-stat-num">3x</div>
+          <div class="spot-stat-label">higher rate of AI fluency among network graduates vs. state average</div>
+          <div class="spot-stat-sub">Measured by structured assessment, not self-report</div>
+        </div>
+
+        <div class="spot-quote">
+          "My students don't just use AI. They interrogate it. They ask it to show its reasoning. They catch its mistakes. That's not a technology skill. That's a thinking skill. And it's the one thing the job market can't automate."
+          <cite>Jared Smith, 7th Grade Math &bull; WA Teacher of the Year 2030 &bull; Corps 2025</cite>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OUTCOMES DASHBOARD
+     ============================================================ -->
+<section class="s-outcomes" data-s="7">
+  <div class="container">
+    <div class="section-label label-blue">Outcomes Dashboard</div>
+    <h2 class="section-title" style="color:var(--white);">Closing the gap, <span class="hi">year over year</span></h2>
+    <p class="section-intro" style="color:rgba(255,255,255,.55);">
+      Not overnight. Not all at once. But steadily, measurably, in ways that compound. Two to three percentage points a year. That's how systems change.
+    </p>
+
+    <div class="outcome-grid">
+      <!-- Math -->
+      <div class="o-card">
+        <div class="o-card-title">8th Grade Math (High-Poverty Schools)</div>
+        <div class="o-row"><span class="o-yr">'26</span><div class="o-track"><div class="o-fill blue" style="width:13%;">13%</div></div></div>
+        <div class="o-row"><span class="o-yr">'27</span><div class="o-track"><div class="o-fill blue" style="width:16%;">16%</div></div></div>
+        <div class="o-row"><span class="o-yr">'28</span><div class="o-track"><div class="o-fill blue" style="width:19%;">19%</div></div></div>
+        <div class="o-row"><span class="o-yr">'29</span><div class="o-track"><div class="o-fill blue" style="width:23%;">23%</div></div></div>
+        <div class="o-row"><span class="o-yr">'30</span><div class="o-track"><div class="o-fill blue" style="width:27%;">27%</div></div></div>
+        <div class="o-row"><span class="o-yr">'31</span><div class="o-track"><div class="o-fill red" style="width:31%;">31%</div></div></div>
+        <div class="o-note">State high-poverty avg: 15%. Network closing gap at ~3 pts/year.</div>
+      </div>
+      <!-- College -->
+      <div class="o-card">
+        <div class="o-card-title">College Enrollment (Network Grads)</div>
+        <div class="o-row"><span class="o-yr">'26</span><div class="o-track"><div class="o-fill blue" style="width:42%;">42%</div></div></div>
+        <div class="o-row"><span class="o-yr">'27</span><div class="o-track"><div class="o-fill blue" style="width:47%;">47%</div></div></div>
+        <div class="o-row"><span class="o-yr">'28</span><div class="o-track"><div class="o-fill blue" style="width:52%;">52%</div></div></div>
+        <div class="o-row"><span class="o-yr">'29</span><div class="o-track"><div class="o-fill blue" style="width:58%;">58%</div></div></div>
+        <div class="o-row"><span class="o-yr">'30</span><div class="o-track"><div class="o-fill blue" style="width:63%;">63%</div></div></div>
+        <div class="o-row"><span class="o-yr">'31</span><div class="o-track"><div class="o-fill red" style="width:67%;">67%</div></div></div>
+        <div class="o-note">State avg for similar demographics: 50%. Network exceeds by 17 pts.</div>
+      </div>
+      <!-- AI -->
+      <div class="o-card">
+        <div class="o-card-title">Students w/ Structured AI Instruction</div>
+        <div class="o-row"><span class="o-yr">'26</span><div class="o-track"><div class="o-fill blue" style="width:19%;">19%</div></div></div>
+        <div class="o-row"><span class="o-yr">'27</span><div class="o-track"><div class="o-fill blue" style="width:34%;">34%</div></div></div>
+        <div class="o-row"><span class="o-yr">'28</span><div class="o-track"><div class="o-fill blue" style="width:52%;">52%</div></div></div>
+        <div class="o-row"><span class="o-yr">'29</span><div class="o-track"><div class="o-fill blue" style="width:71%;">71%</div></div></div>
+        <div class="o-row"><span class="o-yr">'30</span><div class="o-track"><div class="o-fill blue" style="width:88%;">88%</div></div></div>
+        <div class="o-row"><span class="o-yr">'31</span><div class="o-track"><div class="o-fill red" style="width:100%;">100%</div></div></div>
+        <div class="o-note">Every Innovative School: daily structured AI practice. State avg: 38%.</div>
+      </div>
+      <!-- Chronic Absence -->
+      <div class="o-card">
+        <div class="o-card-title">Chronic Absenteeism (Innovative Schools)</div>
+        <div class="o-row"><span class="o-yr">'26</span><div class="o-track"><div class="o-fill cream" style="width:38%;">38%</div></div></div>
+        <div class="o-row"><span class="o-yr">'28</span><div class="o-track"><div class="o-fill cream" style="width:30%;">30%</div></div></div>
+        <div class="o-row"><span class="o-yr">'31</span><div class="o-track"><div class="o-fill blue" style="width:21%;">21%</div></div></div>
+        <div class="o-note">Down 17 pts. Students come because they want to be there.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEATTLE TIMES
+     ============================================================ -->
+<section class="s-news" data-s="8">
+  <div class="container-narrow">
+    <div class="news-mast">
+      <div class="news-mast-name">The Seattle Times</div>
+      <div class="news-mast-date">Sunday, March 12, 2031</div>
+    </div>
+    <div class="news-tag">Education</div>
+    <h3 class="news-hl">In 10 Washington Schools, a Quiet Revolution Is Producing Results That Demand Attention</h3>
+    <p class="news-deck">A network of high-poverty schools is outperforming state averages in math and sending graduates to college at rates their communities haven't seen in a generation.</p>
+    <div class="news-byline">By Sarah Chen &bull; Education Reporter &bull; 12 min read</div>
+
+    <div class="news-body">
+      <p>When Nik Nair became principal of Dimmitt Middle School in 2028, his building's 8th-grade math proficiency rate was 14%. It is now 31%. That number is not exceptional by itself. What makes it exceptional is where Dimmitt sits: in one of the highest-poverty corridors in King County, serving a student body that is 89% students of color.</p>
+
+      <p>Nair is a 2024 Teach For America corps member from SeaTac. He grew up thirty minutes from the school he now leads. He is one of 37 TFA alumni now leading schools across Washington state. And Dimmitt is one of 10 "Innovative Schools" in a network that, five years ago, existed only as an idea in a strategic plan.</p>
+
+      <div class="news-pq">
+        "I grew up here. These are my students. We didn't wait for the system to change — we built something real in one building, and then the building next door asked how we did it."
+        <cite>Nik Nair, Principal, Dimmitt Middle School (Corps 2024)</cite>
+      </div>
+
+      <p>The results are turning heads. Across the 10 schools, math proficiency among low-income students has risen an average of 2.3 percentage points per year since 2027, compared to 0.4 points statewide. Reading gains are comparable. And the college enrollment rate for network graduates reached 67% last year, exceeding the state average by 17 points.</p>
+
+      <p>Perhaps most notable: every Innovative School now has structured AI instruction built into daily practice. Students aren't just using AI tools. They are learning when not to, building the critical judgment that employers say separates a capable graduate from a dependent one.</p>
+
+      <p>A few miles away, Ashley, also a 2024 corps member, runs Mirror Lake Elementary, one of the network's highest performing innovative schools. Her building has become the model for what elementary transformation looks like: student led morning meetings, AI integrated reading instruction, and a parent engagement program that draws families into the school three times a week.</p>
+
+      <p>Across the hall from Nair's office, Jared Smith — Washington's 2030 Teacher of the Year and a 2025 corps member — runs a 7th-grade math classroom where every student uses AI daily. Down in Renton, Krista McMullen, a 2024 corps member who spent nine years teaching in the South before joining TFA, is now an assistant superintendent driving the district's adoption of the Innovative School model.</p>
+
+      <p>In Highline, Ash Ramirez and Joe Hille — both 2025 corps members — launched an innovative early college program that has become the district's fastest-growing pathway. And in Federal Way, Claire Wu and Bradee Parisotto, both from the 2024 corps, built an in-district alumni innovation zone that now connects 40 TFA alumni working across five schools.</p>
+
+      <div class="news-pq">
+        "Other states have programs. Washington has proof. That's the difference. You can visit these schools. You can talk to these principals. The results are right there."
+        <cite>Dr. Karen Mitchell, Georgetown Center on Education and the Workforce</cite>
+      </div>
+
+      <p>The question education leaders are starting to ask is not whether the model works. It is whether Washington is ready to scale it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VOICES
+     ============================================================ -->
+<section class="s-voices" data-s="9">
+  <div class="container">
+    <div class="section-label label-red">Voices from the Network</div>
+    <h2 class="section-title" style="color:var(--navy);">The people who <span class="hi">built it</span></h2>
+
+    <div class="voice-grid">
+      <div class="v-card">
+        <p class="v-quote">I came to TFA from SeaTac. I went to Northwest University. The kids at Dimmitt look like me, grew up where I grew up. When I became principal, I didn't have a theory of change — I had a neighborhood. We just refused to accept that these kids couldn't do what kids across the highway were doing. And now they're proving it every day.</p>
+        <div class="v-attr">
+          <img src="photos/nik-nair.png" alt="Nik Nair" class="v-ava">
+          <div><div class="v-name">Nik Nair</div><div class="v-role">Principal, Dimmitt Middle School &bull; Corps 2024</div></div>
+        </div>
+      </div>
+      <div class="v-card">
+        <p class="v-quote">Sofia and Rocio changed everything about how our students see themselves. Sofia runs morning circles where kids talk about their futures like they own them. Rocio built a bilingual family engagement program that doubled parent participation in one year. These aren't programs — they're relationships. And they work because the teachers stay.</p>
+        <div class="v-attr">
+          <img src="photos/kristina-thach.png" alt="Kristina Thach" class="v-ava">
+          <div><div class="v-name">Kristina Thach</div><div class="v-role">Math Department Chair, Rainier Prep &bull; Corps 2024</div></div>
+        </div>
+      </div>
+      <div class="v-card">
+        <p class="v-quote">What TFA Washington built here isn't a TFA thing — it's a community thing. They brought the talent. But the principals set the vision. The families showed up. The districts opened doors. Arm in arm. That's why it's spreading. It's not an outside program being imposed. It's proof built by people who belong here.</p>
+        <div class="v-attr">
+          <img src="photos/krista-mcmullen.png" alt="Krista McMullen" class="v-ava">
+          <div><div class="v-name">Krista McMullen</div><div class="v-role">Assistant Superintendent, Renton School District &bull; Corps 2024</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TIMELINE
+     ============================================================ -->
+<section class="s-timeline" data-s="10">
+  <div class="container" style="max-width:900px;">
+    <div class="section-label label-red">How We Got Here</div>
+    <h2 class="section-title" style="color:var(--navy);">The path from <span class="hi">moment</span> to <span class="hi-red">movement</span></h2>
+
+    <div class="tl">
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2026</div>
+        <div class="tl-title">Plan & Prepare</div>
+        <div class="tl-desc">The Frontier Leadership vision goes to the board. Partnership agreements with Dimmitt and Rainier Prep. Summer Institute redesigned around AMR. 24 corps members, 40 Ignite fellows, 12 AI fellows.</div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2027</div>
+        <div class="tl-title">Build the Engine</div>
+        <div class="tl-desc">Two Innovative Schools launch. Shared NWEA data practices go live. First AI Fellows in classrooms. Summer Institute trains mentor teachers alongside corps members at scale for the first time.</div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2028</div>
+        <div class="tl-title">Prove the Model</div>
+        <div class="tl-desc">Five schools. First published results show 2+ point annual gains. AI Fellows move into lead teaching roles. Principals outside the network start visiting. ESWA partners on anchor school convenings.</div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2029</div>
+        <div class="tl-title">Scale by Demand</div>
+        <div class="tl-desc">Eight schools. Playbook published openly. Four districts request it unprompted. Alumni principals leading 34 schools. TFA Washington cited in the Governor's education report.</div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2030</div>
+        <div class="tl-title">Reach 10</div>
+        <div class="tl-desc">Ten Innovative Schools, 5,000+ students. 100 corps members. 120 Ignite Fellows. Washington recognized as a national proof point for AI-integrated, equity-driven education.</div>
+      </div>
+      <div class="tl-i">
+        <div class="tl-dot"></div>
+        <div class="tl-yr">2031</div>
+        <div class="tl-title">Today</div>
+        <div class="tl-desc">91,000 students reached. 14 districts have adopted elements of the playbook. 6 alumni lead schools we never directly touched. OSPI recommends the model statewide. The proof is traveling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PARENT LETTER
+     ============================================================ -->
+<section class="s-letter" data-s="11">
+  <div class="container">
+    <div class="section-label label-red" style="text-align:center;">A Letter</div>
+    <div class="letter-card">
+      <div class="letter-from">From a Parent at Dimmitt Middle School</div>
+      <div class="letter-body">
+        <p>Dear Teach For America Washington,</p>
+        <p>My daughter Lucia started 6th grade at Dimmitt in 2027. She came home the first week and told me her teacher asked her what kind of future she wanted to build. Nobody had ever asked her that before. Not in those words.</p>
+        <p>By 8th grade, she was using AI to map out college application timelines for herself and three of her friends. Her teacher didn't tell her to do that. She just knew how, because someone had taught her when to use the tool and when to think for herself.</p>
+        <p>Lucia is a freshman at UW this year. She is the first person in our family to go to college. I know that is a story you hear a lot. But I want you to know what it feels like from this side. It feels like someone finally believed what we always knew: that our kids could do this if someone built a school that expected them to.</p>
+        <p>Thank you for building that school.</p>
+      </div>
+      <div class="letter-sig">&mdash; Gloria Mendez, Federal Way</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OSPI PRESS RELEASE
+     ============================================================ -->
+<section class="s-press" data-s="12">
+  <div class="container">
+    <div class="press-card">
+      <div class="press-org">Office of Superintendent of Public Instruction</div>
+      <div class="press-title">OSPI Highlights Innovative Schools Network as Model for Statewide Math Recovery</div>
+      <div class="press-sub">Superintendent cites "credible, replicable proof" in annual address to educators</div>
+      <div class="press-meta">FOR IMMEDIATE RELEASE &bull; January 14, 2031 &bull; Olympia, WA</div>
+      <div class="press-body">
+        <p><strong>OLYMPIA</strong> &mdash; In her annual State of Education address, Superintendent of Public Instruction Dr. Reyes highlighted the Teach For America Washington Innovative Schools Network as a leading example of what she called "the kind of credible, replicable proof our system needs."</p>
+        <p>The network's 10 schools, all serving high-poverty communities, have posted average annual math proficiency gains of 2.3 percentage points since 2027, nearly six times the state average for comparable schools. College enrollment among graduates reached 67%, exceeding similar demographics by 17 points.</p>
+        <p>"For two decades, we have invested more per pupil than almost any state," Dr. Reyes said. "What these schools have shown us is that investment works when it is organized around visible results, concentrated talent, and shared accountability. We don't need more programs. We need more proof. And now we have it."</p>
+        <p>OSPI will include the Innovative School Playbook in recommended resources for districts pursuing math recovery strategies in the 2031-32 school year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLOSING
+     ============================================================ -->
+<section class="s-closing" data-s="13">
+  <div class="closing-inner">
+    <h2>This is <span class="hi">2031.</span><br>It's not fictional.</h2>
+    <p>Every number on this page is grounded in a trajectory that starts with what we do this year. 2 percentage points per year in math. 5 points per year in college enrollment. One school at a time. One Frontier Leader at a time. Arm in arm with the communities we serve.</p>
+    <p>We knew Washington had every condition for change except one: visible proof that peers trust. We didn't build it alone. We built it together.</p>
+    <p>TFA fueled the talent. Communities built the proof.</p>
+    <div class="closing-final">Now: what has to be true for this to be real?</div>
+    <div class="closing-footer">Teach For America Washington &bull; Frontier Leadership &bull; Internal Strategic Planning Session &bull; 2026</div>
+  </div>
+</section>
+
+<script>
+const sects=document.querySelectorAll('[data-s]');
+const dots=document.querySelectorAll('.dot');
+function go(i){sects[i].scrollIntoView({behavior:'smooth'});}
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){const i=e.target.dataset.s;dots.forEach(d=>d.classList.remove('active'));if(dots[i])dots[i].classList.add('active');}});
+},{threshold:.3});
+sects.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
