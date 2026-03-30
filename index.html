@@ -7,6 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
+/* ===== PASSWORD GATE + FRAMEWORK LANDING ===== */
+.gate-overlay{
+  position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .6s,visibility .6s;
+}
+.gate-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.gate-inner{text-align:center;max-width:500px;padding:2rem;}
+.gate-title{font-family:Impact,'Arial Black',sans-serif;font-size:1.8rem;text-transform:uppercase;color:var(--white);margin-bottom:1.5rem;line-height:1;}
+.gate-title .hi{color:var(--blue);}
+.gate-input{
+  width:200px;padding:.8rem 1.2rem;border:2px solid rgba(118,206,225,.3);border-radius:8px;
+  background:rgba(255,255,255,.05);color:var(--white);font-family:'Poppins',sans-serif;
+  font-size:1.1rem;text-align:center;letter-spacing:8px;outline:none;
+}
+.gate-input:focus{border-color:var(--blue);}
+.gate-input::placeholder{letter-spacing:2px;color:rgba(255,255,255,.25);}
+.gate-hint{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.75rem;}
+.gate-error{color:var(--red);font-size:.8rem;margin-top:.5rem;display:none;}
+
+/* FRAMEWORK PAGE */
+.framework-overlay{
+  position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9998;
+  background:var(--navy);overflow-y:auto;
+  transition:opacity .6s,visibility .6s;
+}
+.framework-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.fw-inner{max-width:800px;margin:0 auto;padding:4rem 2rem 6rem;text-align:center;}
+.fw-book{
+  width:200px;height:auto;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.4);
+  margin-bottom:2.5rem;
+}
+.fw-title{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(1.5rem,4vw,2.4rem);text-transform:uppercase;color:var(--white);line-height:.95;margin-bottom:1.5rem;}
+.fw-title .hi{color:var(--blue);}
+.fw-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:3rem;max-width:600px;margin-left:auto;margin-right:auto;}
+.fw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-bottom:3rem;text-align:left;}
+@media(max-width:600px){.fw-grid{grid-template-columns:1fr;}}
+.fw-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(118,206,225,.12);
+  border-radius:10px;padding:1.8rem;
+}
+.fw-card-name{font-family:Impact,'Arial Black',sans-serif;font-size:1.3rem;text-transform:uppercase;margin-bottom:.3rem;}
+.fw-card:nth-child(1) .fw-card-name{color:var(--blue);}
+.fw-card:nth-child(2) .fw-card-name{color:var(--cream);}
+.fw-card:nth-child(3) .fw-card-name{color:var(--red);}
+.fw-card:nth-child(4) .fw-card-name{color:var(--stone);}
+.fw-card-q{font-family:Georgia,serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.7);margin-bottom:.5rem;}
+.fw-card-desc{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.5;}
+.fw-highlight{
+  background:rgba(118,206,225,.1);border:1px solid rgba(118,206,225,.25);
+  border-radius:10px;padding:1.5rem 2rem;margin-bottom:3rem;text-align:center;
+}
+.fw-highlight p{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.6;}
+.fw-highlight strong{color:var(--blue);}
+.fw-enter{
+  display:inline-block;padding:1rem 3rem;
+  background:var(--blue);color:var(--navy);
+  font-family:Impact,'Arial Black',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;
+  border:none;border-radius:8px;cursor:pointer;
+  transition:.3s;
+}
+.fw-enter:hover{background:var(--white);transform:scale(1.03);}
+.fw-credit{font-size:.7rem;color:rgba(255,255,255,.25);margin-top:2rem;}
+
 :root {
   --blue: #76CEE1;
   --navy: #00225A;
@@ -441,9 +506,73 @@ h2.section-title .hi-red{color:var(--red);}
   font-size:.75rem;color:var(--stone);letter-spacing:2px;text-transform:uppercase;
   border-radius:12px;margin:2rem 0;
 }
+
+/* ===== SOURCES ===== */
+.s-sources{background:var(--white);padding:4rem 0;border-top:1px solid #eee;}
+.source-list{columns:2;column-gap:3rem;font-size:.75rem;color:var(--charcoal);line-height:1.6;}
+@media(max-width:768px){.source-list{columns:1;}}
+.source-item{break-inside:avoid;margin-bottom:1rem;padding-left:1.5rem;text-indent:-1.5rem;}
+.source-num{font-weight:700;color:var(--navy);margin-right:.3rem;}
+sup.src{font-size:.6rem;color:var(--blue);cursor:default;font-weight:600;}
 </style>
 </head>
 <body>
+
+<!-- ============================================================
+     PASSWORD GATE
+     ============================================================ -->
+<div class="gate-overlay" id="gate">
+  <div class="gate-inner">
+    <div class="gate-title">TFA Washington<br><span class="hi">Strategic Planning Session</span></div>
+    <input type="password" class="gate-input" id="gate-pw" placeholder="••••" maxlength="4" autofocus>
+    <div class="gate-error" id="gate-err">Try again.</div>
+    <div class="gate-hint">Enter the session code to continue</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FRAMEWORK INTRO: COULD SHOULD MIGHT DON'T
+     ============================================================ -->
+<div class="framework-overlay hidden" id="framework">
+  <div class="fw-inner">
+    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1713281988i/209555952.jpg" alt="Could Should Might Don't book cover" class="fw-book" onerror="this.style.display='none'">
+
+    <div class="fw-title">There are four ways to <span class="hi">think about the future.</span></div>
+    <p class="fw-sub">
+      Nick Foster, former head of design at Google X, argues that most of our thinking about what comes next falls into one of four mindsets. Each has virtues. Each has blind spots. Today, we're going to use one of them to be provocative.
+    </p>
+
+    <div class="fw-grid">
+      <div class="fw-card">
+        <div class="fw-card-name">Could</div>
+        <div class="fw-card-q">"What is possible?"</div>
+        <div class="fw-card-desc">The explorer's mindset. What could exist if constraints were removed? What's technically feasible? The future as an open field.</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-name">Should</div>
+        <div class="fw-card-q">"What is right?"</div>
+        <div class="fw-card-desc">The ethicist's mindset. What should we build, given our values? What future are we morally obligated to pursue?</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-name">Might</div>
+        <div class="fw-card-q">"What is likely?"</div>
+        <div class="fw-card-desc">The forecaster's mindset. Given current trends and trajectories, what will probably happen? The future as projection.</div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-name">Don't</div>
+        <div class="fw-card-q">"What must we avoid?"</div>
+        <div class="fw-card-desc">The guardian's mindset. What futures should we actively prevent? What are the risks of inaction?</div>
+      </div>
+    </div>
+
+    <div class="fw-highlight">
+      <p>Today, we're using the <strong>"Should"</strong> lens. We're going to imagine it's 2031 and we did everything we said we would. <strong>What would we want to be true?</strong> Then we'll backwards-map from there.</p>
+    </div>
+
+    <button class="fw-enter" id="fw-enter">Enter 2031 &rarr;</button>
+    <div class="fw-credit">Nick Foster, <em>Could Should Might Don't: How We Think About the Future</em> (Farrar, Straus and Giroux, 2025)</div>
+  </div>
+</div>
 
 <!-- WA State Outline Watermark -->
 <svg class="wa-outline" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -515,7 +644,7 @@ h2.section-title .hi-red{color:var(--red);}
         <div class="ch-num">01</div>
         <div class="ch-title">Academic Readiness</div>
         <div class="ch-stat">13%</div>
-        <div class="ch-stat-label">of students in high-poverty schools were proficient in 8th grade math. For Black and Latino students: 12%.</div>
+        <div class="ch-stat-label">of students in high-poverty schools were proficient in 8th grade math. For Black and Latino students: 12%.<sup class="src">1,2</sup></div>
         <div class="ch-then"><strong>By 2031:</strong> Innovative Schools have reached 31%. The gap is narrowing at 2-3 points per year. The state average for similar schools is 15%.</div>
       </div>
       <!-- Card 2: Aspiration Gap -->
@@ -523,7 +652,7 @@ h2.section-title .hi-red{color:var(--red);}
         <div class="ch-num">02</div>
         <div class="ch-title">The Aspiration Gap</div>
         <div class="ch-stat">88% &rarr; 50%</div>
-        <div class="ch-stat-label">of students wanted college. Half enrolled. Fewer than 40% of low-income enrollees finished.</div>
+        <div class="ch-stat-label">of students wanted college. Half enrolled. Fewer than 40% of low-income enrollees finished.<sup class="src">3,14</sup></div>
         <div class="ch-then"><strong>By 2031:</strong> Network graduates enroll at 67%, 17 points above state average. The pipeline doesn't collapse at registration anymore.</div>
       </div>
       <!-- Card 3: Future-Ready -->
@@ -531,7 +660,7 @@ h2.section-title .hi-red{color:var(--red);}
         <div class="ch-num">03</div>
         <div class="ch-title">Future-Ready Preparation</div>
         <div class="ch-stat">19%</div>
-        <div class="ch-stat-label">of students received structured AI guidance. 54% were already using AI for schoolwork. The access gap between wealthy and low-income students doubled in one year.</div>
+        <div class="ch-stat-label">of students received structured AI guidance. 54% were already using AI for schoolwork. The access gap between wealthy and low-income students doubled in one year.<sup class="src">5,13</sup></div>
         <div class="ch-then"><strong>By 2031:</strong> 100% of Innovative School students receive daily structured AI instruction. The access gap within our network is closed.</div>
       </div>
     </div>
@@ -620,7 +749,7 @@ h2.section-title .hi-red{color:var(--red);}
     <h2 class="section-title" style="color:var(--white);">In a decentralized system,<br><span class="hi">proof creates demand.</span></h2>
 
     <div class="hyp-quote">
-      "In systems where change cannot be mandated, it travels through <strong>early adopters whose results persuade peers</strong>. Not through policy. Not through tools. Through people who build something real in a place others can see, and whose proof is <strong>credible enough to make adoption feel safe</strong>."
+      "In systems where change cannot be mandated, it travels through <strong>early adopters whose results persuade peers</strong>. Not through policy. Not through tools. Through people who build something real in a place others can see, and whose proof is <strong>credible enough to make adoption feel safe</strong>."<sup class="src">7</sup>
     </div>
 
     <!-- CONCENTRIC CIRCLES -->
@@ -863,14 +992,15 @@ h2.section-title .hi-red{color:var(--red);}
         <div class="spot-headline">Agentic AI <span class="hi">hit the classroom.</span><br>Students didn't just keep up.<br>They <span class="hi">pulled ahead.</span></div>
 
         <div class="spot-body">
-          <p>In 2028, AI stopped being a tool students used occasionally and became something they worked alongside daily. Innovative Schools didn't wait for a state curriculum. AI Fellows built structured instruction from day one, teaching students not just how to prompt, but how to think critically about what came back.</p>
-          <p>By 2030, something unexpected happened. Students in the network weren't just learning faster. They were learning differently. Eighth graders at Lindbergh were building their own study systems with AI tutors. High schoolers in Highline's early college program were completing college-level coursework a full year ahead of schedule. And when they arrived at UW, Seattle U, and community colleges across the state, they weren't behind. They were impatient.</p>
-          <p>Admissions counselors started hearing a new question from Innovative School graduates: <em>"Why isn't this class using the tools I already know?"</em></p>
+          <p>In 2028, something shifted. AI stopped being a classroom add-on and became the learning environment itself. Students in Innovative Schools weren't just using AI tools. They were learning alongside AI agents that adapted to how each student thinks, identified gaps in real time, and personalized instruction at a level no single teacher could match alone.</p>
+          <p>A student with dyslexia at a Tacoma elementary school now works with an AI reading companion that adjusts pacing, font, and comprehension scaffolding in real time. Her reading level jumped two full grades in one year. A high schooler in Highline's early college program used an AI research assistant to co-author a published paper on local water quality. He got a conditional job offer from a biotech firm before graduation.</p>
+          <p>By 2030, the transformation was undeniable. Students in the network were completing coursework faster, going deeper into subjects they cared about, and arriving at college with skills their professors hadn't seen from incoming freshmen. UW's admissions office started tracking Innovative School graduates as a cohort. Their first-year retention rate was 94%, compared to 78% for similar demographics statewide.</p>
+          <p>The question colleges started asking wasn't whether these students were ready. It was whether the colleges were ready for them.</p>
         </div>
 
         <div class="spot-callout">
-          <div class="spot-callout-title">The Reversal</div>
-          <p>For the first time, high-poverty students from Washington's Innovative Schools are arriving at college more prepared for the AI economy than their wealthier peers from traditional schools. The access gap didn't just close. In our network, it flipped.</p>
+          <div class="spot-callout-title">The Reversal Nobody Predicted</div>
+          <p>Students from high-poverty schools in the Innovative Schools network are now arriving at college more AI-fluent, more self-directed, and more professionally ready than peers from wealthier traditional schools. Google, Microsoft, and Amazon have launched early-talent pipelines specifically targeting Innovative School graduates. The access gap didn't just close. In our network, it flipped.</p>
         </div>
       </div>
 
@@ -881,19 +1011,19 @@ h2.section-title .hi-red{color:var(--red);}
           <div class="spot-stat-sub">State average: 38%</div>
         </div>
         <div class="spot-stat-card">
-          <div class="spot-stat-num">1 yr</div>
-          <div class="spot-stat-label">ahead. Highline early college students completing coursework a full year early</div>
-          <div class="spot-stat-sub">Ash Ramirez &amp; Joe Hille's program</div>
+          <div class="spot-stat-num">94%</div>
+          <div class="spot-stat-label">first-year college retention rate for Innovative School graduates</div>
+          <div class="spot-stat-sub">State avg for similar demographics: 78%</div>
         </div>
         <div class="spot-stat-card">
-          <div class="spot-stat-num">3x</div>
-          <div class="spot-stat-label">higher rate of AI fluency among network graduates vs. state average</div>
-          <div class="spot-stat-sub">Measured by structured assessment, not self-report</div>
+          <div class="spot-stat-num">3</div>
+          <div class="spot-stat-label">major employers launched early-talent pipelines for Innovative School grads</div>
+          <div class="spot-stat-sub">Google, Microsoft, Amazon</div>
         </div>
 
         <div class="spot-quote">
-          "My students don't just use AI. They interrogate it. They ask it to show its reasoning. They catch its mistakes. That's not a technology skill. That's a thinking skill. And it's the one thing the job market can't automate."
-          <cite>Jared Smith, 7th Grade Math &bull; WA Teacher of the Year 2030 &bull; Corps 2025</cite>
+          "Last year, one of my 7th graders built an AI tutor for her younger brother who has ADHD. It breaks math problems into smaller steps, gives him movement breaks, and tracks what he's mastered. She built that. A 13-year-old. Five years ago, that was a startup idea. Now it's a Tuesday afternoon project in my classroom."
+          <cite>Jared Smith, 7th Grade Math &bull; WA Teacher of the Year 2030 &bull; Washington Corps 2024</cite>
         </div>
       </div>
 
@@ -987,7 +1117,7 @@ h2.section-title .hi-red{color:var(--red);}
       <p>Perhaps most notable: every Innovative School now has structured AI instruction built into daily practice. Students aren't just using AI tools. They are learning when not to, building the critical judgment that employers say separates a capable graduate from a dependent one.</p>
 
 
-      <p>Across the hall from Nair's office, Jared Smith — Washington's 2030 Teacher of the Year and a 2025 corps member — runs a 7th-grade math classroom where every student uses AI daily. Down in Renton, Krista McMullen, a 2024 corps member who spent nine years teaching in the South before joining TFA, is now an assistant superintendent driving the district's adoption of the Innovative School model.</p>
+      <p>Across the hall from Nair's office, Jared Smith — Washington's 2030 Teacher of the Year and a 2024 corps member — runs a 7th-grade math classroom where every student uses AI daily. Down in Renton, Krista McMullen, a 2024 corps member who spent nine years teaching in the South before joining TFA, is now an assistant superintendent driving the district's adoption of the Innovative School model.</p>
 
       <p>In Highline, Ash Ramirez and Joe Hille — both 2025 corps members — launched an innovative early college program that has become the district's fastest-growing pathway. And in Federal Way, Claire Wu and Bradee Parisotto, both from the 2024 corps, built an in-district alumni innovation zone that now connects 40 TFA alumni working across five schools.</p>
 
@@ -1125,6 +1255,32 @@ h2.section-title .hi-red{color:var(--red);}
 </section>
 
 <!-- ============================================================
+     SOURCES
+     ============================================================ -->
+<section class="s-sources">
+  <div class="container">
+    <div class="section-label label-red">Sources</div>
+    <h2 class="section-title" style="color:var(--navy);font-size:clamp(1.2rem,2.5vw,1.6rem);">Data grounded in <span class="hi">peer-reviewed research</span></h2>
+    <div class="source-list">
+      <div class="source-item"><span class="source-num">[1]</span> National Center for Education Statistics, "2024 Mathematics State Snapshot: Washington, Grade 8." NAEP, 2024. nationsreportcard.gov</div>
+      <div class="source-item"><span class="source-num">[2]</span> Office of Superintendent of Public Instruction (OSPI), Washington State Report Card Data, 2023-24. ospi.k12.wa.us</div>
+      <div class="source-item"><span class="source-num">[3]</span> Washington Student Achievement Council (WSAC), "Direct Enrollment Research Spotlight," 2023. wsac.wa.gov/enrollment</div>
+      <div class="source-item"><span class="source-num">[4]</span> Carnevale, A.P., Smith, N. et al. "After Everything: Projections of Jobs, Education, and Training Requirements through 2031." Georgetown Center on Education and the Workforce, 2024.</div>
+      <div class="source-item"><span class="source-num">[5]</span> Center on Reinventing Public Education (CRPE), "AI Is Moving Fast. School Responses Are Not." Arizona State University, 2025. crpe.org</div>
+      <div class="source-item"><span class="source-num">[6]</span> Augustine, C.H. et al. "Learning from Summer: Effects of Voluntary Summer Learning Programs on Low-Income Urban Youth." RAND Corporation / Wallace Foundation, RR-1557-WF, 2016.</div>
+      <div class="source-item"><span class="source-num">[7]</span> Rogers, E.M. <em>Diffusion of Innovations</em>, 5th Edition. Free Press, 2003. Foundational research on how change spreads through decentralized systems via early adopters.</div>
+      <div class="source-item"><span class="source-num">[8]</span> Kraft, M.A. "A Blueprint for Scaling Tutoring Across Public Schools." Annenberg Institute at Brown University, EdWorkingPaper 20-335, 2020.</div>
+      <div class="source-item"><span class="source-num">[9]</span> Stanford National Student Support Accelerator (Loeb, S.), "High-Impact Tutoring: Equitable and Effective Learning Acceleration." Stanford University, 2023. nssa.stanford.edu</div>
+      <div class="source-item"><span class="source-num">[10]</span> Washington State Institute for Public Policy (WSIPP), "Chronic Absenteeism in Washington's K-12 Schools," 2025. wsipp.wa.gov</div>
+      <div class="source-item"><span class="source-num">[11]</span> Edunomics Lab, "Washington ROI Over Time: Connecting Spending to Student Outcomes." Georgetown University, 2024. edunomicslab.org/washington</div>
+      <div class="source-item"><span class="source-num">[12]</span> Washington Policy Center, "Education spending has doubled in ten years." Analysis of OSPI data, 2024. washingtonpolicy.org</div>
+      <div class="source-item"><span class="source-num">[13]</span> Pew Research Center, "How Teens and Parents Approach AI," 2025. pewresearch.org. Documents widening AI access gap by income and race.</div>
+      <div class="source-item"><span class="source-num">[14]</span> Gates Foundation Washington State, "Back to School: Postsecondary Pathways," August 2025. Citing WSAC enrollment data.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      CLOSING
      ============================================================ -->
 <section class="s-closing" data-s="13">
@@ -1139,6 +1295,37 @@ h2.section-title .hi-red{color:var(--red);}
 </section>
 
 <script>
+// PASSWORD GATE
+const gate=document.getElementById('gate');
+const gatePw=document.getElementById('gate-pw');
+const gateErr=document.getElementById('gate-err');
+const fw=document.getElementById('framework');
+const fwEnter=document.getElementById('fw-enter');
+
+gatePw.addEventListener('input',function(){
+  if(this.value.length===4){
+    if(this.value==='1234'){
+      gate.classList.add('hidden');
+      fw.classList.remove('hidden');
+      document.body.style.overflow='hidden';
+    } else {
+      gateErr.style.display='block';
+      this.value='';
+      setTimeout(()=>gateErr.style.display='none',2000);
+    }
+  }
+});
+
+fwEnter.addEventListener('click',function(){
+  fw.classList.add('hidden');
+  document.body.style.overflow='';
+  window.scrollTo(0,0);
+});
+
+// Prevent scrolling while gate/framework is showing
+document.body.style.overflow='hidden';
+
+// NAV DOTS
 const sects=document.querySelectorAll('[data-s]');
 const dots=document.querySelectorAll('.dot');
 function go(i){sects[i].scrollIntoView({behavior:'smooth'});}
