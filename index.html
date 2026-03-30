@@ -507,6 +507,27 @@ h2.section-title .hi-red{color:var(--red);}
   border-radius:12px;margin:2rem 0;
 }
 
+/* ===== FEEDBACK FORM ===== */
+.s-feedback{background:var(--cream);padding:5rem 0;}
+.fb-form{max-width:600px;margin:0 auto;}
+.fb-row{margin-bottom:1.2rem;}
+.fb-label{display:block;font-weight:600;font-size:.85rem;color:var(--navy);margin-bottom:.4rem;}
+.fb-input,.fb-textarea{
+  width:100%;padding:.8rem 1rem;border:2px solid rgba(0,34,90,.12);border-radius:8px;
+  font-family:'Poppins',sans-serif;font-size:.95rem;color:var(--black);background:var(--white);
+  outline:none;transition:.2s;
+}
+.fb-input:focus,.fb-textarea:focus{border-color:var(--blue);}
+.fb-textarea{min-height:120px;resize:vertical;}
+.fb-submit{
+  display:inline-block;padding:.8rem 2.5rem;
+  background:var(--navy);color:var(--white);
+  font-family:Impact,'Arial Black',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:2px;
+  border:none;border-radius:8px;cursor:pointer;transition:.2s;
+}
+.fb-submit:hover{background:var(--blue);color:var(--navy);}
+.fb-success{display:none;text-align:center;padding:2rem;font-size:1.1rem;color:var(--navy);font-weight:600;}
+
 /* ===== SOURCES ===== */
 .s-sources{background:var(--white);padding:4rem 0;border-top:1px solid #eee;}
 .source-list{columns:2;column-gap:3rem;font-size:.75rem;color:var(--charcoal);line-height:1.6;}
@@ -1258,6 +1279,30 @@ sup.src{font-size:.6rem;color:var(--blue);cursor:default;font-weight:600;}
 </section>
 
 <!-- ============================================================
+     FEEDBACK FORM
+     ============================================================ -->
+<section class="s-feedback">
+  <div class="container">
+    <div class="section-label label-red" style="text-align:center;">Your Voice</div>
+    <h2 class="section-title" style="color:var(--navy);text-align:center;font-size:clamp(1.4rem,3vw,2rem);">What has to be true <span class="hi">for this to be real?</span></h2>
+    <p style="text-align:center;color:var(--charcoal);max-width:500px;margin:0 auto 2rem;font-size:.95rem;">Your feedback will shape the next version of this strategy.</p>
+
+    <div class="fb-form" id="fb-form">
+      <div class="fb-row">
+        <label class="fb-label" for="fb-name">Your Name</label>
+        <input type="text" class="fb-input" id="fb-name" placeholder="First and last name">
+      </div>
+      <div class="fb-row">
+        <label class="fb-label" for="fb-text">Your Feedback</label>
+        <textarea class="fb-textarea" id="fb-text" placeholder="What resonated? What's missing? What would you change?"></textarea>
+      </div>
+      <button class="fb-submit" id="fb-submit" type="button">Submit Feedback</button>
+    </div>
+    <div class="fb-success" id="fb-success">Thank you. Your feedback has been recorded.</div>
+  </div>
+</section>
+
+<!-- ============================================================
      SOURCES
      ============================================================ -->
 <section class="s-sources">
@@ -1327,6 +1372,20 @@ fwEnter.addEventListener('click',function(){
 
 // Prevent scrolling while gate/framework is showing
 document.body.style.overflow='hidden';
+
+// FEEDBACK FORM → GOOGLE FORM
+document.getElementById('fb-submit').addEventListener('click',function(){
+  const name=document.getElementById('fb-name').value.trim();
+  const text=document.getElementById('fb-text').value.trim();
+  if(!name||!text){alert('Please fill in both fields.');return;}
+  const url='https://docs.google.com/forms/d/e/1FAIpQLSdtw9yvF9LCpFO5ixzLYPqTgmgGi0UDw6Pr6oRfZ06TrLXIIg/formResponse';
+  const data=new URLSearchParams();
+  data.append('entry.424927693',name);
+  data.append('entry.1077328625',text);
+  fetch(url,{method:'POST',mode:'no-cors',body:data});
+  document.getElementById('fb-form').style.display='none';
+  document.getElementById('fb-success').style.display='block';
+});
 
 // NAV DOTS
 const sects=document.querySelectorAll('[data-s]');
